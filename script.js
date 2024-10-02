@@ -172,6 +172,7 @@ class Prey {
                     temp.mood = e.mood
                     this.vision = temp
                 }
+                bestDist = thisDist
             }
         })
     }
