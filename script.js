@@ -2,7 +2,11 @@ let entities
 let entityCount
 let images = []
 let huntTime
-let speed = 2
+let speed = 1
+let slider = document.getElementById('speed')
+slider.addEventListener("input", () => {
+    speed = slider.value
+})
 
 function preload() {
     for(i = 0; i<5; i++) {
@@ -26,17 +30,19 @@ function setup() {
 }
 
 function draw() {
-    background(0)
-    translate(width/2, height/2)
-
-    for(i=0; i<speed; i++) {
-        tick()
+    if(speed > 0) {
+        background(0)
+        translate(width/2, height/2)
+    
+        for(i=0; i<speed; i++) {
+            tick()
+        }
+    
+        translate(-width/2, -height/2)
+        fill('white')
+        textAlign(LEFT, TOP)
+        text(entityCount+' entities', 5, 5)
     }
-
-    translate(-width/2, -height/2)
-    fill('white')
-    textAlign(LEFT, TOP)
-    text(entityCount+' entities', 5, 5)
 }
 
 function tick() {
@@ -47,7 +53,7 @@ function tick() {
         if(e.type=="Prey" && JSON.stringify(e) != '{}') e.draw()
         if(e.type=="Predator" && JSON.stringify(e) != '{}') e.draw()
     })
-    if(entityCount < 2 || frameRate() <= 10) setup()
+    if(entityCount < 2 || frameRate() <= 7) setup()
 
     if(entityCount > 30 && !(huntTime)) {
         entities.push(new Predator(width*0.1, -height/2, 0, {health: 100, color: {hue: 0, sat: 50, bri: 100}, age: 1}))
