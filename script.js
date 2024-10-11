@@ -196,7 +196,7 @@ class Predator {
             if(e.type == type && e != this) {
                 let x = Math.abs(this.x-e.x)
                 let y = Math.abs(this.y-e.y)
-                if(x <= this.width/2+e.width/2 && y <= this.height/2+e.width/2) temp = true
+                if(x <= this.width/2+e.width/2 && y <= this.height/2+e.height/2) temp = true
             }
         })
         return temp
@@ -361,7 +361,7 @@ class Prey {
             if(e.type == type && e != this) {
                 let x = Math.abs(this.x-e.x)
                 let y = Math.abs(this.y-e.y)
-                if(x <= this.width/2+e.width/2 && y <= this.height/2+e.width/2) temp = true
+                if(x <= this.width/2+e.width/2 && y <= this.height/2+e.height/2) temp = true
             }
         })
         return temp
