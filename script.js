@@ -46,6 +46,7 @@ function draw() {
 }
 
 function tick() {
+    background(0, 20)
     entities.forEach((e) => {
         if(e.type=="Plant" && JSON.stringify(e) != '{}') e.draw()
     })
