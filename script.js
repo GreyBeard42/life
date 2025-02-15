@@ -10,7 +10,7 @@ slider.addEventListener("input", () => {
 
 function preload() {
     for(i = 0; i<5; i++) {
-        images.push(loadImage("images/life_"+i+".png"))
+        images.push(loadImage("https://cdn.jsdelivr.net/gh/GreyBeard42/life@main/images/life_"+i+".png"))
     }
 }
 
