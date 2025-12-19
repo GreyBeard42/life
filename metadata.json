@@ -1,0 +1,15 @@
+{
+  "title": "Life",
+  "desc": "Simulated life with plants and animals that evolve over time.",
+
+  "status": "archived",
+  "version": "v1.2",
+
+  "date": "10/1/2024",
+
+  "tags": [
+    "javascript",
+    "p5.js",
+    "tinker"
+  ]
+}
